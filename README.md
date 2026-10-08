@@ -70,3 +70,14 @@ python evm_analysis.py
 This regenerates `evm_table.csv`, `evm_dashboard.png`, `evm_forecast_comparison.png`, and `report.md`.
 
 Alternatively, open `evm_ai_forecast.ipynb` and select Run All.
+
+## Interactive dashboard
+
+`app.py` is a Streamlit dashboard that reuses the calculations in `evm_analysis.py`. It adds an editable sprint table, checkpoint slider, and adjustable Random Forest parameters with live S-curve, CPI/SPI, variance, and forecast charts.
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Existing outputs are unchanged; the dashboard only reads the shared functions and does not overwrite `evm_table.csv`, the PNGs, or `report.md`.
